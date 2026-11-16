@@ -1,9 +1,6 @@
-// ================= 1. SET UP + DATA =================
-// Budget data - variables
 let userName = "Brian";
 let monthlyBudget = 45000;
 
-// Expense data - array of objects
 let expenses = [
   { name: "Groceries", amount: 5000, category: "Food", date: "2026-11-10" },
   { name: "Rent", amount: 15000, category: "Rent", date: "2026-11-01" },
@@ -11,7 +8,6 @@ let expenses = [
 ];
 
 // ================= 2. COLLECT USER INPUT (prompts) =================
-// Ask user for their info - with defaults if they press Cancel
 let inputName = prompt("What is your name?", "Brian");
 if (inputName) userName = inputName;
 
@@ -22,7 +18,7 @@ let inputExpenseName = prompt("Enter an expense name:", "Lunch");
 let inputExpenseAmount = prompt("How much did you spend in Ksh?", "500");
 let inputExpenseCategory = prompt("What category? (Food, Rent, Transport...)", "Food");
 
-// Only add if user entered an amount
+
 if (inputExpenseName && inputExpenseAmount) {
   expenses.push({
     name: inputExpenseName,
@@ -76,7 +72,6 @@ if (remaining < 0) {
   console.log("Status: You are within budget. Good job!");
 }
 
-// ================= 6. UPDATE PAGE (so dashboard still works) =================
 // Header + Sidebar
 document.querySelector(".main-header h1").textContent = "Welcome back, " + userName;
 document.querySelector(".sidebar-footer strong").textContent = formatKsh(monthlyBudget);
